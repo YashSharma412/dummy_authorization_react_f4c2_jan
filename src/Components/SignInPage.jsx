@@ -19,9 +19,15 @@ function SignInPage() {
     // console.log(userCredentials);
     if(userCredentials.username === "") {
       setDisplayMsg({msg: "Please enter a username", color: "red"});
+      setTimeout(()=>{
+        setDisplayMsg({msg: "", color: "red"})
+      }, 1200);
       return;
     } else if(userCredentials.password === "") {
       setDisplayMsg({msg: "Please enter a password", color: "red"});
+      setTimeout(()=>{
+        setDisplayMsg({msg: "", color: "red"})
+      }, 1200);
       return;
     }
     
