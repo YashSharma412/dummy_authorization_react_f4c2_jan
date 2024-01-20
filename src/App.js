@@ -1,23 +1,32 @@
-import logo from './logo.svg';
-import './App.css';
-
+import "./styles/App.css";
+import SignInPage from "./Components/SignInPage";
+import ProfilePage from "./Components/ProfilePage";
+import { Route, Routes } from "react-router-dom";
 function App() {
+  const msgStyle = {
+    color: "#333",
+    textAlign: "center",
+    fontSize: "12px",
+    fontWeight: 400,
+    marginTop: "18px"
+  }
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Routes>
+        <Route
+          path="/"
+          element={
+            <div>
+              <SignInPage />
+              <h5 style={msgStyle}>
+                Don't have an account? <a href="#">Sign Up</a>
+              </h5>
+            </div>
+          }
+        />
+
+        <Route path="profilePage" element={<ProfilePage/>} />
+      </Routes>
     </div>
   );
 }
